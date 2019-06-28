@@ -23,9 +23,10 @@
     </div>
     <div>
         <p id="directions-text">Press ANY key to get started!</p>
-        <p id="wins-text">You've Won!</p>
-        <p id="losses-text">Try Again!</p>
+        <p id="wins-text"></p>
+        <p id="losses-text"></p>
         <p id="userchoice-text"></p>
+        <p id="computerchoice-text"></p>
     </div>
     <script type="text/javascript">
 
@@ -42,12 +43,13 @@
         var winsText = document.getElementById("wins-text");
         var lossesText = document.getElementById("losses-text");
 
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log(computerGuess);
 
         document.onkeyup = function (event) {
             var userGuess = event.key;
+            console.log(userGuess);
 
-            var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-            console.log(computerchoices);
 
             if ((userGuess === "matilda") || (userGuess === "aladdin") || (userGuess === "frozen") || (userGuess === "big") || (userGuess === "shrek") || (userGuess === "annie") || (userGuess === "jumanji") || (userGuess === "hook") || (userGuess === "pinocchio") || (userGuess === "cinderella") || (userGuess === "bambi")) {
                 alert("User guess:" + userGuess);
@@ -55,7 +57,7 @@
             }
             if ((userGuess === "matilda" && computerGuess === "matilda") ||
                 (userGuess === "aladdin" && computerGuess === "aladdin") ||
-                (userGuess === "frozen" && computerGuess === "frozen") || (userGuess === "big" && computerGuess === "big") || (userGuess === "shrek" && computerGuess === "shrek") || (userGuess === "annie" && computerGuess === "annie") || (userGuess === "jumanji" && computerGuess === "jumanji") || (userGuess === "aladdin" && computerGuess === "aladdin") || (userGuess === "hook" && computerGuess === "hook") || (userGuess === "pinocchio" && computerGuess === "pinocchio") || (userGuess === "cinderella" && computerGuess === "cinderella") || (userGuess === "bambi" && computerGuess === "bambi") {
+                (userGuess === "frozen" && computerGuess === "frozen") || (userGuess === "big" && computerGuess === "big") || (userGuess === "shrek" && computerGuess === "shrek") || (userGuess === "annie" && computerGuess === "annie") || (userGuess === "jumanji" && computerGuess === "jumanji") || (userGuess === "aladdin" && computerGuess === "aladdin") || (userGuess === "hook" && computerGuess === "hook") || (userGuess === "pinocchio" && computerGuess === "pinocchio") || (userGuess === "cinderella" && computerGuess === "cinderella") || (userGuess === "bambi" && computerGuess === "bambi")) {
                 wins++;
             } else {
                 losses++;
@@ -68,7 +70,7 @@
             winsText.textContent = "wins: " + wins;
             lossesText.textContent = "losses: " + losses;
         }
-    };
+    
 
 
 
