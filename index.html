@@ -14,20 +14,25 @@
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
             <h1 class="display-4">Sarfulah's Hangman</h1>
             <img src="./assets/images/disney-movies.jpg">
-            <p class="lead">Word Guessing Game.</p>
+            <p class="lead text-center">Word Guessing Game.</p>
         </div>
+        <div class="underscore">----</div>
+        <div class="correct">correct</div>
+        <hr>
+        <div class="wrong">wrong</div>
     </div>
     <div>
-        <p id="directions-text">Press ANY key to get started!</p>
+        <strong><p id="directions-text">Press ANY key to get started!</p></strong>
         <p id="wins-text"></p>
         <p id="losses-text"></p>
         <p id="userchoice-text"></p>
         <p id="computerchoice-text"></p>
     </div>
+
     <script type="text/javascript">
 
         var userText = document.getElementById("userchoice-text");
@@ -40,6 +45,7 @@
         var directionsText = document.getElementById("directions-text");
         var userChoiceText = document.getElementById("userchoice-text");
         var computerChoiceText = document.getElementById("computerchoice-text");
+        var underscoreText = document.getElementById("underscore-text");
         var winsText = document.getElementById("wins-text");
         var lossesText = document.getElementById("losses-text");
 
@@ -65,12 +71,13 @@
 
             directionsText.textContent = "";
 
-            userChoiceText.textContent = "You chose:" + userGuess;
-            computerChoiceText.textContent = "The computer chose:" + computerGuess;
-            winsText.textContent = "wins: " + wins;
-            lossesText.textContent = "losses: " + losses;
+            userChoiceText.textContent = "You chose : " + userGuess;
+            // computerChoiceText.textContent = "The computer chose:" + computerGuess;
+            winsText.textContent = "Wins : " + wins;
+            lossesText.textContent = "Losses : " + losses;
+            underscoreText.textContent = "Underscore : " + underscore;
         }
-    
+
 
 
 
@@ -79,3 +86,7 @@
 </body>
 
 </html>
+
+</br>
+</br>
+</br>
