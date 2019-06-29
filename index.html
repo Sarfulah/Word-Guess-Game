@@ -16,14 +16,16 @@
 <body>
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
-            <h1 class="display-4">Sarfulah's Hangman</h1>
             <img src="./assets/images/disney-movies.jpg">
-            <p class="lead text-center">Word Guessing Game.</p>
+            <h2 class="text-center">Sarfulah's Word Guessing Game</h2>
+            
         </div>
         <div class="underscore">----</div>
+        <hr>
         <div class="correct">correct</div>
         <hr>
         <div class="wrong">wrong</div>
+        <hr>
     </div>
     <div>
         <strong><p id="directions-text">Press ANY key to get started!</p></strong>
@@ -36,7 +38,6 @@
     <script type="text/javascript">
 
         var userText = document.getElementById("userchoice-text");
-        console.log(userText);
         var computerChoices = ["matilda", "aladdin", "frozen", "big", "shrek", "annie", "jumanji", "hook", "pinocchio", "cinderella", "bambi"];
 
         var wins = 0;
@@ -57,6 +58,10 @@
             console.log(userGuess);
 
 
+
+
+
+
             if ((userGuess === "matilda") || (userGuess === "aladdin") || (userGuess === "frozen") || (userGuess === "big") || (userGuess === "shrek") || (userGuess === "annie") || (userGuess === "jumanji") || (userGuess === "hook") || (userGuess === "pinocchio") || (userGuess === "cinderella") || (userGuess === "bambi")) {
                 alert("User guess:" + userGuess);
                 alert("Computer guess:" + computerGuess)
@@ -75,7 +80,7 @@
             // computerChoiceText.textContent = "The computer chose:" + computerGuess;
             winsText.textContent = "Wins : " + wins;
             lossesText.textContent = "Losses : " + losses;
-            underscoreText.textContent = "Underscore : " + underscore;
+            // underscoreText.textContent = "Underscore : " + underscore;
         }
 
 

@@ -1,7 +1,7 @@
 img {
     width: 100%;
 }
-h1 {
+h2 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 body {
@@ -9,7 +9,7 @@ body {
 }
 .jumbotron-fluid {
     background-color: goldenrod;
-    margin-top: -30px;
+    margin-top: -63px;
 }
 .underscore {
     text-align: center;
