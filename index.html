@@ -29,7 +29,7 @@
                 <p id="losses-text">Losses : 0<span id="losses-text"></span></p>
                 <p id="userchoice-text">You Chose : <span id="userchoice-text"></span></p>
                 <p id="guessesLeft">Guesses Left : <span id="guessesLeft">10</span></p>
-                <p id="computerChoices-text"></p>
+                <p id="computerhoice-text"></p>
                 <!-- <strong><p id="underScore text-center">-----</p></strong> -->
             </div>
 
@@ -50,45 +50,48 @@
         var guessesLeft = [];
         var randWord;
         var directionsText = document.getElementById("direction-text");
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
         var userChoiceText = document.getElementById("userchoice-text");
         var computerChoiceText = document.getElementById("computerchoice-text")
-        var choosenWord = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-        console.log(choosenWord);
+        var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        console.log(computerGuess);
         var underscoreText = document.getElementById("underscore-text")
 
         document.onkeyup = function (event) {
-            var userText = event.key;
+            var userGuess = event.key;
 
-            var generateUnderscore = () => {
-                for (var i = 0; i < choosenWord.length; i++) {
-                    underScore.push("_");
-                }
-                if(choosenWord[] === userChoiceText) {
-                    underscore[i] = userChoiceText;
-                    console.log(underscore)
-                }
-            }
-            if ((userGuess === "matilda") || (userGuess === "aladdin") || (userGuess === "frozen") || (userGuess === "big") || (userGuess === "shrek") || (userGuess === "annie") || (userGuess === "jumanji") || (userGuess === "hook") || (userGuess === "pinocchio") || (userGuess === "cinderella") || (userGuess === "bambi")) {
-                alert("User guess:" + userGuess);
-                alert("Computer guess:" + computerGuess)
-            }
-            if ((userGuess === "matilda" && computerGuess === "matilda") ||
-                (userGuess === "aladdin" && computerGuess === "aladdin") ||
-                (userGuess === "frozen" && computerGuess === "frozen") || (userGuess === "big" && computerGuess === "big") || (userGuess === "shrek" && computerGuess === "shrek") || (userGuess === "annie" && computerGuess === "annie") || (userGuess === "jumanji" && computerGuess === "jumanji") || (userGuess === "aladdin" && computerGuess === "aladdin") || (userGuess === "hook" && computerGuess === "hook") || (userGuess === "pinocchio" && computerGuess === "pinocchio") || (userGuess === "cinderella" && computerGuess === "cinderella") || (userGuess === "bambi" && computerGuess === "bambi")) {
-                wins++;
-            } else {
-                wrong.push(userChoiceText);
-                guessesLeft--;
-                console.log(guessesLeft);
-            }
+            // var generateUnderscore = () => {
+            //     for (var i = 0; i < computerGuess.length; i++) {
+            //         underScore.push("_");
+            //     }
+            //     if(computerGuess[] === userChoiceText) {
+            //         underscore[i] = userChoiceText;
+            //         console.log(underscore)
+            //     }
+        
+        if ((userGuess === "matilda") || (userGuess === "aladdin") || (userGuess === "frozen") || (userGuess === "big") || (userGuess === "shrek") || (userGuess === "annie") || (userGuess === "jumanji") || (userGuess === "hook") || (userGuess === "pinocchio") || (userGuess === "cinderella") || (userGuess === "bambi")) {
+            alert("User guess:" + userGuess);
+            alert("Computer guess:" + computerGuess)
+        }
+        if ((userGuess === "matilda" && computerGuess === "matilda") ||
+            (userGuess === "aladdin" && computerGuess === "aladdin") ||
+            (userGuess === "frozen" && computerGuess === "frozen") || (userGuess === "big" && computerGuess === "big") || (userGuess === "shrek" && computerGuess === "shrek") || (userGuess === "annie" && computerGuess === "annie") || (userGuess === "jumanji" && computerGuess === "jumanji") || (userGuess === "aladdin" && computerGuess === "aladdin") || (userGuess === "hook" && computerGuess === "hook") || (userGuess === "pinocchio" && computerGuess === "pinocchio") || (userGuess === "cinderella" && computerGuess === "cinderella") || (userGuess === "bambi" && computerGuess === "bambi")) {
+            wins++;
+        } else {
+            losses++;
+            // wrong.push(userChoiceText);
+            // guessesLeft--;
+            // console.log(guessesLeft);
+        }
 
-            directionsText.textContent = "";
+        directionsText.textContent = "";
 
-            userChoiceText.textContent = "You chose : " + userGuess;
-            computerChoiceText.textContent = "The computer chose:" + computerGuess;
-            winsText.textContent = "Wins : " + wins;
-            lossesText.textContent = "Losses : " + losses;
-            underscoreText.textContent = "Underscore : " + underscore;
+        userChoiceText.textContent = "You chose : " + userGuess;
+        computerChoiceText.textContent = "The computer chose:" + computerGuess;
+        winsText.textContent = "Wins : " + wins;
+        lossesText.textContent = "Losses : " + losses;
+        underscoreText.textContent = "Underscore : " + underscore;
         }
     </script>
 
