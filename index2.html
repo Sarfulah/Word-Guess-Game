@@ -14,57 +14,50 @@
 </head>
 
 <body>
-
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
-            <h2 class="text-center">Sarfulah's Word Guessing Game</h2>
             <img src="./assets/images/disney-movies.jpg">
-            <p class="lead text-center">Word Guessing Game.</p>
-
-            <div>
-                <strong>
-                    <p id="directions-text">Press ANY key to get started!</p>
-                </strong>
-                <p id="wins-text">Wins : 0<span id="wins-text"></span></p>
-                <p id="losses-text">Losses : 0<span id="losses-text"></span></p>
-                <p id="userchoice-text">You Chose : <span id="userchoice-text"></span></p>
-                <p id="guessesLeft">Guesses Left : <span id="guessesLeft"></span></p>
-                <p id="computerChoices-text"></p>
-                <!-- <strong><p id="underScore text-center">-----</p></strong> -->
-            </div>
+            <h2 class="text-center">Sarfulah's Word Guessing Game</h2>
 
         </div>
+        <div class="underscore"></div>
+        <hr>
+        <div class="correct">correct</div>
+        <hr>
+        <div class="wrong">wrong</div>
+        <hr>
     </div>
-    
+    <div>
+        <strong>
+            <p id="directions-text">Press ANY key to get started!</p>
+        </strong>
+        <p id="wins-text"></p>
+        <p id="losses-text"></p>
+        <p id="userchoice-text"></p>
+        <p id="computerchoice-text"></p>
+    </div>
+
     <script src="assets/javascript/games.js">
 
         var userText = document.getElementById("userchoice-text");
-        console.log(userText);
-        var lossesText = document.getElementById("losses-text");
-
         var computerChoices = ["matilda", "aladdin", "frozen", "big", "shrek", "annie", "jumanji", "hook", "pinocchio", "cinderella", "bambi"];
 
         var wins = 0;
         var losses = 0;
-        var wrong = [];
-        var guessesLeft = [];
-        var randWord;
-        var directionsText = document.getElementById("direction-text");
+
+        var directionsText = document.getElementById("directions-text");
         var userChoiceText = document.getElementById("userchoice-text");
-        var computerChoiceText = document.getElementById("computerchoice-text")
-        var choosenWord = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-        console.log(choosenWord);
-        var underscoreText = document.getElementById("underscore-text")
+        var computerChoiceText = document.getElementById("computerchoice-text");
+        var underscoreText = document.getElementById("underscore-text");
+        var winsText = document.getElementById("wins-text");
+        var lossesText = document.getElementById("losses-text");
+
+        var computerChoices = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
         document.onkeyup = function (event) {
-            var userText = event.key;
+            var userGuess = event.key;
+            console.log(userGuess);
 
-            var generateUnderscore = () => {
-                for (var i = 0; i < choosenWord.length; i++) {
-                    underScore.push("_");
-                }
-                return underScore;
-            }
             if ((userGuess === "matilda") || (userGuess === "aladdin") || (userGuess === "frozen") || (userGuess === "big") || (userGuess === "shrek") || (userGuess === "annie") || (userGuess === "jumanji") || (userGuess === "hook") || (userGuess === "pinocchio") || (userGuess === "cinderella") || (userGuess === "bambi")) {
                 alert("User guess:" + userGuess);
                 alert("Computer guess:" + computerGuess)
@@ -74,23 +67,24 @@
                 (userGuess === "frozen" && computerGuess === "frozen") || (userGuess === "big" && computerGuess === "big") || (userGuess === "shrek" && computerGuess === "shrek") || (userGuess === "annie" && computerGuess === "annie") || (userGuess === "jumanji" && computerGuess === "jumanji") || (userGuess === "aladdin" && computerGuess === "aladdin") || (userGuess === "hook" && computerGuess === "hook") || (userGuess === "pinocchio" && computerGuess === "pinocchio") || (userGuess === "cinderella" && computerGuess === "cinderella") || (userGuess === "bambi" && computerGuess === "bambi")) {
                 wins++;
             } else {
-                wrong.push(userChoiceText);
-                guessesLeft--;
-                console.log(guessesLeft);
+                losses++;
             }
 
             directionsText.textContent = "";
 
             userChoiceText.textContent = "You chose : " + userGuess;
-            computerChoiceText.textContent = "The computer chose:" + computerGuess;
+            // computerChoiceText.textContent = "The computer chose:" + computerGuess;
             winsText.textContent = "Wins : " + wins;
             lossesText.textContent = "Losses : " + losses;
-            underscoreText.textContent = "Underscore : " + underscore;
+            // underscoreText.textContent = "Underscore : " + underscore;
         }
+
+
+
+
     </script>
 
-    <body>
-
+</body>
 
 </html>
 
