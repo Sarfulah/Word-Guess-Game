@@ -28,14 +28,14 @@
                 <p id="wins-text">Wins : 0<span id="wins-text"></span></p>
                 <p id="losses-text">Losses : 0<span id="losses-text"></span></p>
                 <p id="userchoice-text">You Chose : <span id="userchoice-text"></span></p>
-                <p id="guessesLeft">Guesses Left : <span id="guessesLeft"></span></p>
+                <p id="guessesLeft">Guesses Left : <span id="guessesLeft">10</span></p>
                 <p id="computerChoices-text"></p>
                 <!-- <strong><p id="underScore text-center">-----</p></strong> -->
             </div>
 
         </div>
     </div>
-    
+
     <script src="assets/javascript/games.js">
 
         var userText = document.getElementById("userchoice-text");
@@ -63,7 +63,10 @@
                 for (var i = 0; i < choosenWord.length; i++) {
                     underScore.push("_");
                 }
-                return underScore;
+                if(choosenWord[] === userChoiceText) {
+                    underscore[i] = userChoiceText;
+                    console.log(underscore)
+                }
             }
             if ((userGuess === "matilda") || (userGuess === "aladdin") || (userGuess === "frozen") || (userGuess === "big") || (userGuess === "shrek") || (userGuess === "annie") || (userGuess === "jumanji") || (userGuess === "hook") || (userGuess === "pinocchio") || (userGuess === "cinderella") || (userGuess === "bambi")) {
                 alert("User guess:" + userGuess);
