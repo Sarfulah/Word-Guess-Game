@@ -10,11 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-
 </head>
 
 <body>
-
     <div class="container">
         <div class="jumbotron jumbotron-fluid">
             <h2 class="text-center">Sarfulah's Word Guessing Game</h2>
@@ -39,16 +37,24 @@
         </div>
     </div>
 
-    <script src="assets/javascript/games.js">
+    <script>
+        var words = ["matilda", "aladdin", "frozen", "big", "shrek", "annie", "jumanji", "hook", "pinocchio", "cinderella", "bambi"];
 
-        
+        var word = words[Math.floor(Math.random() * words.length)];
+
+        var answerArray = [];
+        for (var i = 0; i < word.length; i++) {
+            answerArray[i] = "_";
+        }
+        var remainingLetters = word.length;
+
+        while (remainingLetters > 0) {
+            alert(answerArray.join(" "));
+            var guess = prompt("Guess a letter, or click cancel to stop.");
+        }
+
     </script>
 
-    <body>
-
+</body>
 
 </html>
-
-</br>
-</br>
-</br>
