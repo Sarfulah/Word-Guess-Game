@@ -61,6 +61,7 @@ document.onkeyup = function (event) {
         // guessesLeft decreases by 1
         // Have we lost? If so reset the game, and incease losses by 1
     }
+   
 
         directionsText.textContent = "";
 
